@@ -10,12 +10,15 @@ You must write an algorithm with O(log n) runtime complexity.
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    for (let i=0; i<nums.length; i++){
-      console.log(i, nums[i], target)
-      if (nums[i]===target) return i
-      if (nums[i]===target+1) return i+1
+    let right = nums.length - 1;
+    let left = 0;
+    while (left <= right) {
+        pivot = Math.floor(left + (right - left) / 2)
+        if (nums[pivot] === target) return pivot;
+        if (nums[pivot] > target) right = pivot - 1
+        else {left = pivot + 1}
     }
-    return "fail"
+    return left;
 };
 
-searchInsert([1,3,5,6], 2)
+searchInsert([1,3,5,6], 4)
