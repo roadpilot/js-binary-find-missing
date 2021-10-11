@@ -10,5 +10,7 @@ You must write an algorithm with O(log n) runtime complexity.
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    
+    console.log(nums, target)
 };
+
+searchInsert([1,3,5,6], 2)
